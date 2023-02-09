@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   @ViewChild('logo') logo!: ElementRef;
   @ViewChild('navMenu') navMenu!: ElementRef;
   @ViewChild('menuBtn') menuBtn!: ElementRef;
-
+  showMenu: boolean = false;
   @HostListener('window:scroll', ['$event'])
   scrollHandler(event: Event) {
     const navClassList = (this.navBar.nativeElement as HTMLElement).classList;
@@ -32,4 +32,8 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  toggleMenu() {
+    this.showMenu = !this.showMenu
+  }
 }

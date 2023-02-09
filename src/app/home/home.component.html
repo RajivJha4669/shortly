@@ -1,22 +1,30 @@
 <nav class="navbar" #navBar>
   <div class="outer-container">
-    <ul class="menu-items" #navMenu>
-      <li>
-        <a href="#"
-          ><img #logo src="assets/images/logo-dark.svg" alt="Shortly"
-        /></a>
-      </li>
+    <a href="#" class="logo"
+      ><img #logo src="assets/images/logo-dark.svg" alt="Shortly"
+    /></a>
+    <ul class="menu-items" [ngClass]="showMenu ? 'active' : ''" #navMenu>
       <li><a href="#features">Features</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#resources">Resources</a></li>
+      <li><a class="login-btn">Login</a></li>
+      <li><a class="signup-btn">Sign Up</a></li>
     </ul>
-    <button class="login-btn">Login</button>
-    <button class="signup-btn">Sign Up</button>
+    <div class="menu-btn" (click)="toggleMenu()">
+      <img
+        src="assets/icons/hamburger-menu-icon.svg"
+        alt="hamburger-menu-icon"
+      />
+    </div>
   </div>
 </nav>
 
 <section>
   <div class="descripton-container">
+    <img
+      src="assets/images/illustration-working.svg"
+      alt="Shorter Illustrations"
+    />
     <div class="header">
       <h1 class="title">More than just shorter links</h1>
       <p class="sub-title">
@@ -25,10 +33,6 @@
       </p>
       <button>Get started</button>
     </div>
-    <img
-      src="assets/images/illustration-working.svg"
-      alt="Shorter Illustrations"
-    />
   </div>
   <div class="inner-container">
     <div class="shorten-link-container">
